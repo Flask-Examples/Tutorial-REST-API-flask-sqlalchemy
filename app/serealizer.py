@@ -16,3 +16,7 @@ class ProductSchema(ma.Schema):
     class Meta():
         """Product Shcema."""
         fields = ('id', 'description', 'price', 'qty')
+
+
+product_schema = ProductSchema(strict=True)
+products_schema = ProductSchema(many=True, strict=True)

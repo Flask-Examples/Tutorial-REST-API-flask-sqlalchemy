@@ -1,15 +1,11 @@
 """Views ."""
 
 from flask import Blueprint, jsonify, request
-from .serealizer import ProductSchema
+from .serealizer import product_schema, products_schema
 from .model import Product, db
 
 
 bp_main = Blueprint('main', __name__)
-
-
-product_schema = ProductSchema(strict=True)
-products_schema = ProductSchema(many=True, strict=True)
 
 
 @bp_main.route('/', methods=['GET'])
